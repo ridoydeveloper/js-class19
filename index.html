@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body class="d-flex vw-100 vh-100 align-items-center justify-content-center">
+   
+
+<div class="devs">
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#modal_add">Add new devs</a>
+    <hr>
+  <div class="card">
+      <div class="card-body">
+        <table class="table table-striped ">
+            <thead>
+                <tr style="text-align: center;">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Call</th>
+                    <th>skill</th>
+                    <th>Photo</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="devs_data_list">
+             
+            </tbody>
+        </table> 
+      </div>
+  </div>
+</div>
+
+
+<!-- devs add modal -->
+
+<div class="modal fade" id="modal_add">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add new devs</h2>
+            </div>
+            <div class="modal-body ">
+                <form action="" id="devs_add_form">
+                <div class="form-group mb-3">
+                    <label for="">Name</label>
+                    <input id="name" class="form-control" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Email</label>
+                    <input id="email" class="form-control" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Call</label>
+                    <input id="call" class="form-control" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Photo</label>
+                    <input id="photo" class="form-control" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Skills</label>
+                    <input class="form-control" name="" id="skills_list">
+
+                    <option value="">-select-</option>
+                    
+                       
+                    </input>
+                    
+                </div>
+                <div class="form-group mb-3">
+                    
+                    <input class="btn btn-success w-100" data-bs-dismiss="modal" type="submit" value="add">
+                </div>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- devs view modal -->
+
+<div class="modal fade" id="modal_view">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <form action="" id="devs_add_form">
+                    <div class="form-group mb-3">
+                        <label for="">Name</label>
+                        <input id="name" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Email</label>
+                        <input id="email" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Call</label>
+                        <input id="call" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Photo</label>
+                        <input id="photo" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Skills</label>
+                        <select class="form-control" name="" id="skills_list">
+    
+                        <option value="">-select-</option>
+                        
+                           
+                        </select>
+                        
+                    </div>
+                    <div class="form-group mb-3">
+                        
+                        <input class="btn btn-success w-100" data-bs-dismiss="modal" type="submit" value="add">
+                    </div>
+    
+    
+    
+                    </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- devs edite modal -->
+
+<div class="modal fade" id="modal_edit">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+           
+            <div class="modal-body">
+
+                <h2>Edit Developers Data</h2>
+                <hr>
+                <form action="" id="devs_edit_form">
+                    <div class="form-group mb-3">
+                        <label for="">Name</label>
+                        <input id="ename" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                         <input id="edit_id" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Email</label>
+                        <input id="eemail" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Call</label>
+                        <input id="ecall" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <img class="w-100" src="" id="epreview" alt="">
+                        <label for="">Photo</label>
+                        <input id="ephoto" class="form-control" type="text">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Skills</label>
+                        <input class="form-control" name="" id="eskills_list"> 
+    
+                    </div>
+                    <div class="form-group mb-3">
+                        
+                        <input class="btn btn-success w-100" data-bs-dismiss="modal" type="submit" value="add">
+                    </div>
+    
+    
+    
+                    </form>
+
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- devs add modal -->
+
+<div class="modal fade" id="modal_delete">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./functions.js"></script>
+  </body>
+</html>
