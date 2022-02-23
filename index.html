@@ -106,42 +106,6 @@
 
             <div class="modal-body">
 
-                <form action="" id="devs_add_form">
-                    <div class="form-group mb-3">
-                        <label for="">Name</label>
-                        <input id="name" class="form-control" type="text">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="">Email</label>
-                        <input id="email" class="form-control" type="text">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="">Call</label>
-                        <input id="call" class="form-control" type="text">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="">Photo</label>
-                        <input id="photo" class="form-control" type="text">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="">Skills</label>
-                        <select class="form-control" name="" id="skills_list">
-    
-                        <option value="">-select-</option>
-                        
-                           
-                        </select>
-                        
-                    </div>
-                    <div class="form-group mb-3">
-                        
-                        <input class="btn btn-success w-100" data-bs-dismiss="modal" type="submit" value="add">
-                    </div>
-    
-    
-    
-                    </form>
-
             </div>
 
         </div>
@@ -202,14 +166,20 @@
 </div>
 
 
-<!-- devs add modal -->
+<!-- devs delete modal -->
 
 <div class="modal fade" id="modal_delete">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header"></div>
+        <div class="modal-content" style="padding: 18px;">
+            
             <div class="modal-body"></div>
-            <div class="modal-footer"></div>
+            <h2>Are you sure</h2>
+            <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> 
+            <div class="btns mt-2">
+                <button data-bs-dismiss="modal" class="btn btn-info">Close</button>
+                <button data-bs-dismiss="modal" delid="" id="deldata" class="btn btn-danger">Delete</button>
+            </div>
         </div>
     </div>
 </div>

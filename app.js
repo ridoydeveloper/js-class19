@@ -86,9 +86,9 @@ const getDevelopers = () => {
         
         <td><img style="object-fit:cover; width:50px; height:50px;" src="${dev.photo}" alt=""></td>
         <td>
-            <a class="btn btn-info btn-sm" data-bs-toggle="modal" href="#modal_view"> <i class="fa fa-eye"></i></a>
+            <a class="btn btn-info btn-sm" onclick="modalSingekData(${dev.id})" data-bs-toggle="modal" href="#modal_view"> <i class="fa fa-eye"></i></a>
             <a class="btn btn-warning btn-sm" onclick="editDeveloper(${dev.id})" data-bs-toggle="modal"  href="#modal_edit"> <i class="fa fa-edit"></i></a>
-            <a class="btn btn-danger btn-sm" data-bs-toggle="modal" href="#modal_delete"> <i class="fa fa-trash"></i></a>
+            <a class="btn btn-danger btn-sm" onclick="modalDeleteData(${dev.id})" data-bs-toggle="modal" href="#modal_delete"> <i class="fa fa-trash"></i></a>
         </td>
     </tr>`;
 
@@ -243,3 +243,69 @@ devs_edit_form.addEventListener('submit' , function(e){
     });
 
 });
+
+
+
+
+/**
+ * modal delete
+ */
+ const modal_delete = document.getElementById('deldata');
+
+function modalDeleteData(id){
+
+
+    modal_delete.setAttribute('delId' , id);
+
+
+};
+
+modal_delete.addEventListener('click' , function(){
+
+    let del_id = this.getAttribute('delId');
+
+axios.delete(`https://my-json-server.typicode.com/ridoydeveloper/js-class18/devs/${del_id}`).then(res => {
+
+
+    getDevelopers();
+
+
+
+})
+
+});
+
+
+/**
+ * single data
+ */
+
+function modalSingekData(id){
+
+    let modal_view = document.getElementById('modal_view');
+
+    axios.get(`https://my-json-server.typicode.com/ridoydeveloper/js-class18/devs/${id}`).then(res => {
+
+
+    modal_view.querySelector('.modal-body').innerHTML =`
+    
+ 
+    <div class="card">
+    <img class="card-img" src="${res.data.photo}" alt="">
+    <div class="card-body">
+        <h2>${res.data.name}</h2>
+        <h3>${res.data.skill}</h3>
+
+
+    </div>
+</div>
+
+    
+    
+    `;
+
+
+
+});
+
+}
